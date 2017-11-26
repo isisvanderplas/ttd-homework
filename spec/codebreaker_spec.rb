@@ -40,6 +40,7 @@ RSpec.describe Codebreaker do
         end
       end
 
+
       it "does not give guidance on correct formatted guesses" do
         input = '4444'
 
@@ -49,6 +50,7 @@ RSpec.describe Codebreaker do
         game.guess(input)
       end
     end
+
 
     context "[B] with no matches" do
       it "sends a mark with ''" do
@@ -79,6 +81,7 @@ RSpec.describe Codebreaker do
       end
     end
 
+
     context "[D] with 2 matches" do
       it "2 number matches sends a mark with '--'" do
         game.start('1234')
@@ -104,6 +107,9 @@ RSpec.describe Codebreaker do
         game.guess(input)
       end
     end
+
+    # ---------------------------------------------------------------------
+
 
     context "[E] with 3 matches" do
       it "3 exact matches sends a mark with '+++'" do
