@@ -1,6 +1,8 @@
 class Codebreaker
   class Game
     attr_reader :output
+    include Enumerable
+
 
     def initialize(output)
       @output = output
@@ -37,9 +39,9 @@ class Codebreaker
 
     def exact_match(input)
       secret_number = @secret_number.to_array
-      input.each_char do |c|
-        secret_number.each_char do |s|
-          c == s
+      input.each_with_index do |c, index|
+        secret_number.each_with_index do |s, index|
+          c[index] == s[index]
         end
       end
     end
@@ -62,46 +64,3 @@ class Codebreaker
     end
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#
