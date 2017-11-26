@@ -72,10 +72,6 @@ RSpec.describe Codebreaker do
         game.guess(input)
       end
 
-
-      # ---------------------------------------------------------------------
-
-
       it "An exact match sends a mark with '+'" do
         game.start('1234')
         input = '1555'
@@ -84,6 +80,9 @@ RSpec.describe Codebreaker do
         game.guess(input)
       end
     end
+
+    # ---------------------------------------------------------------------
+
 
     context "[D] with 2 matches" do
       it "2 number matches sends a mark with '--'" do
