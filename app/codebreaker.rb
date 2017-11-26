@@ -52,6 +52,13 @@ class Codebreaker
       output.puts "+" if @exact_match = 1
       output.puts "--" if @number_match = 2
       output.puts "+-" if @number_match = 1 && @exact_match == 1
+      output.puts "+++" if @exact_match = 3
+      output.puts "---" if @number_match = 3
+      output.puts "++-" if @exact_match = 2 && @number_match = 1
+      output.puts "++++" if @exact_match = 4
+      output.puts "----" if @number_match = 4
+      output.puts "++--" if @exact_match = 2 && @number_match = 2
+
     end
   end
 end
