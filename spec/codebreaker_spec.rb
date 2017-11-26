@@ -51,7 +51,6 @@ RSpec.describe Codebreaker do
       end
     end
 
-    # ---------------------------------------------------------------------
 
     context "[B] with no matches" do
       it "sends a mark with ''" do
@@ -72,6 +71,10 @@ RSpec.describe Codebreaker do
 
         game.guess(input)
       end
+
+
+      # ---------------------------------------------------------------------
+
 
       it "An exact match sends a mark with '+'" do
         game.start('1234')

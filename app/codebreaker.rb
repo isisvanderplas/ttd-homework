@@ -4,7 +4,8 @@ class Codebreaker
 
     def initialize(output)
       @output = output
-      @equal_count = 0
+      @number_match = 0
+      @perfect_match = 0
     end
 
     def start(secret_number)
@@ -18,25 +19,74 @@ class Codebreaker
       input.split('')
     end
 
-    def equal_count(input)
-      input = input.to_array
+    def compare(input)
       secret_number = @secret_number.to_array
-      input.each do |number|
-        if secret_number.include?(number)
-          number.to_i
-          count += 1
-        end
-      @equal_count
+      input.each_char do |c|
+      @number_match += 1 if secret_number.include?(c)
       end
     end
 
     def no_matches
-      @equal_count == 0
+      @number_match == 0
+    end
+
+    def exact_match(input)
+      secret_number = @secret_number.to_array
+      input.each_char do |c|
+        secret_number.each_char do |s|
+          c == s
+        end
+      end
     end
 
     def guess(input)
       output.puts "Try guessing a number with four digits" unless input.length == 4
       output.puts "" if no_matches
+      output.puts "-" if @number_match = 1
+      output.puts "+" if @exact_match = 1
     end
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
