@@ -17,7 +17,8 @@ class Codebreaker
       # Make sure to replace next line with the actual implemented marking algorithm,
       # using the @secret_number
 
-      output.puts "you typed '#{input}'"
+      # output.puts "you typed '#{input}'"
+      output.puts "Try guessing a number with four digits" unless input.length == 4
     end
   end
 end
